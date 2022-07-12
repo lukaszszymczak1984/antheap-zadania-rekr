@@ -1,0 +1,13 @@
+﻿@using NipSearch.Entities
+@model List<Person>
+
+@if (Model == null || !Model.Any())
+{
+	@:-
+}
+else
+{
+	<div class="persons-table">
+		@Html.DisplayFor(m=>m)
+	</div>
+}

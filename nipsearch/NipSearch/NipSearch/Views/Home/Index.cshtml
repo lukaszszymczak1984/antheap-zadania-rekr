@@ -1,0 +1,30 @@
+﻿@{
+	ViewData["Title"] = "Wyszukaj przedsiębiorcę";
+}
+
+<div class="card">
+	<div class="card-body">
+		<h5 class="card-title">Wyszukaj przedsiębiorcę</h5>
+		<form id="searchForm" class="row row-cols-lg-auto g-3 align-items-center">
+			<div class="col-12">
+				<input type="text" class="form-control" id="nip" placeholder="Wpisz numer NIP" autocomplete="off">
+			</div>
+
+			<div class="col-12">
+				<button type="submit" class="btn btn-primary">Szukaj</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div id="searchResult" class="mt-3">
+</div>
+
+<div id="errorResult" class="alert alert-danger mt-3" role="alert" style="display: none;">
+	Wystąpił nieoczekiwany błąd.
+</div>
+
+<div id="loading-status" style="display: none;">
+	<div class="spinner-border spinner-border-sm text-primary"></div>
+	<span>Trwa pobieranie informacji...</span>
+</div>

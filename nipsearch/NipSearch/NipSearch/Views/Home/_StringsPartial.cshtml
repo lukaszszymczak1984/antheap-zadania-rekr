@@ -1,0 +1,13 @@
+﻿@model List<string>
+
+@if (Model == null || !Model.Any())
+{
+	@:-
+}
+else
+{
+	foreach (var elem in Model)
+	{
+		@Html.DisplayFor(m=>elem,"StringValue")
+	}
+}

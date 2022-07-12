@@ -1,0 +1,25 @@
+﻿@using NipSearch.Entities
+@model Person
+
+<table class="border-bottom w-100">
+	<tr>
+		<td>@Html.LabelFor(m=>m.CompanyName)</td>
+		<td class="text-end">@Html.DisplayFor(m=>m.CompanyName,"StringValue")</td>
+	</tr>
+	<tr>
+		<td>@Html.LabelFor(m=>m.FirstName)</td>
+		<td class="text-end">@Html.DisplayFor(m=>m.FirstName,"StringValue")</td>
+	</tr>
+	<tr>
+		<td>@Html.LabelFor(m=>m.LastName)</td>
+		<td class="text-end">@Html.DisplayFor(m=>m.LastName,"StringValue")</td>
+	</tr>
+	<tr>
+		<td>@Html.LabelFor(m=>m.Pesel)</td>
+		<td class="text-end">@Html.DisplayFor(m=>m.Pesel,"StringValue")</td>
+	</tr>
+	<tr>
+		<td>@Html.LabelFor(m=>m.Nip)</td>
+		<td class="text-end">@Html.DisplayFor(m=>m.Nip,"StringValue")</td>
+	</tr>
+</table>

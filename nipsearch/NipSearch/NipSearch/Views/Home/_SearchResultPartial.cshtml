@@ -1,0 +1,104 @@
+﻿@using NipSearch.Entities
+@using System.Reflection
+@using System.ComponentModel.DataAnnotations
+@model ResponseEntity
+
+@if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+{
+	<div class="alert alert-danger" role="alert">
+		@Model.ErrorMessage
+	</div>
+}
+else if (Model.Subject == null)
+{
+	<div class="alert alert-danger" role="alert">
+		Nie znaleziono przedsiębiorcy o podanym numerze NIP.
+	</div>
+}
+else
+{
+	<table class="table">
+		<tbody>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.Name)</td>
+				<td class="text-end">@Html.DisplayFor(m=>m.Subject!.Name,"StringValue")</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.Nip)</td>
+				<td class="text-end">@Html.DisplayFor(m=>m.Subject!.Nip,"StringValue")</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.StatusVat)</td>
+				<td class="text-end">@Html.DisplayFor(m=>m.Subject!.StatusVat,"StringValue")</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.Regon)</td>
+				<td class="text-end">@Html.DisplayFor(m=>m.Subject!.Regon,"StringValue")</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.Pesel)</td>
+				<td class="text-end">@Html.DisplayFor(m=>m.Subject!.Pesel,"StringValue")</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.Krs)</td>
+				<td class="text-end">@Html.DisplayFor(m=>m.Subject!.Krs,"StringValue")</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.ResidenceAddress)</td>
+				<td class="text-end">@Html.DisplayFor(m=>m.Subject!.ResidenceAddress,"StringValue")</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.WorkingAddress)</td>
+				<td class="text-end">@Html.DisplayFor(m=>m.Subject!.WorkingAddress,"StringValue")</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.Representatives)</td>
+				<td class="text-end"><partial name="_PersonsPartial" model="@Model.Subject!.Representatives" /></td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.AuthorizedClerks)</td>
+				<td class="text-end"><partial name="_PersonsPartial" model="@Model.Subject!.AuthorizedClerks" /></td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.Partners)</td>
+				<td class="text-end"><partial name="_PersonsPartial" model="@Model.Subject!.Partners" /></td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.RegistrationLegalDate)</td>
+				<td class="text-end">@Html.DisplayFor(m=>m.Subject!.RegistrationLegalDate,"StringValue")</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.RegistrationDenialDate)</td>
+				<td class="text-end">@Html.DisplayFor(m=>m.Subject!.RegistrationDenialDate,"StringValue")</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.RegistrationDenialBasis)</td>
+				<td class="text-end">@Html.DisplayFor(m=>m.Subject!.RegistrationDenialBasis,"StringValue")</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.RestorationDate)</td>
+				<td class="text-end">@Html.DisplayFor(m=>m.Subject!.RestorationDate,"StringValue")</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.RestorationBasis)</td>
+				<td class="text-end">@Html.DisplayFor(m=>m.Subject!.RestorationBasis,"StringValue")</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.RemovalDate)</td>
+				<td class="text-end">@Html.DisplayFor(m=>m.Subject!.RemovalDate,"StringValue")</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.RemovalBasis)</td>
+				<td class="text-end">@Html.DisplayFor(m=>m.Subject!.RemovalBasis,"StringValue")</td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.AccountNumbers)</td>
+				<td class="text-end"><partial name="_StringsPartial" model="@Model.Subject!.AccountNumbers" /></td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(m=>m.Subject!.HasVirtualAccountsValue)</td>
+				<td class="text-end">@Html.DisplayFor(m=>m.Subject!.HasVirtualAccountsValue,"StringValue")</td>
+			</tr>
+		</tbody>
+	</table>
+}
